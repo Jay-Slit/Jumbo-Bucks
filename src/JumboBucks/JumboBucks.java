@@ -1,7 +1,7 @@
 /*
  * Author: Cameron Justice
- * Program Title: 
- * Program Summary:
+ * Program Title: Java Lottery
+ * Program Summary: Simple Lottery Simulator.
  */
 package JumboBucks;
 
