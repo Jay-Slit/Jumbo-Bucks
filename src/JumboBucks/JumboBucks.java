@@ -3,13 +3,13 @@
  * Program Title: 
  * Program Summary:
  */
-package sandbox1;
+package JumboBucks;
 
 //Imports
 import java.util.Random;
 import java.util.Scanner;
 
-public class Sandbox1 {
+public class JumboBucks {
 
     public static void main(String[] args) {
         Random rand = new Random();
@@ -33,11 +33,18 @@ public class Sandbox1 {
                 lottoString = Integer.toString(lotto);
                 lottoString = "JUMBO";
             }
+            
+            int prize = getPrize();
             if(input.nextLine().isEmpty())
                 if(lottoString == "")
-                    System.out.println("#" + i + " is: " + lotto + " Prize: $" + getPrize());
-                else
-                    System.out.println("#" + i + " is: " + lottoString + " Prize: $" + getPrize());
+                    System.out.println("#" + i + " is: " + lotto + " Prize: $" + prize);
+                else{
+                    System.out.println("#" + i + " is: " + lottoString + " Prize: $" + prize);
+                    System.out.println("Congratulations! You got a jumbo! You win double! You have won $" + prize * 2);
+                }
+            
+            if(lotto == serialNumber)
+                System.out.println("Congratulations! You have won " + prize);
         }
     }
     
@@ -68,22 +75,17 @@ public class Sandbox1 {
                     if(rand.nextBoolean())
                         if(rand.nextBoolean())
                             if(rand.nextBoolean())
-                                return lotto;
+                                if(rand.nextBoolean())
+                                    if(rand.nextBoolean())
+                                        if(rand.nextBoolean())
+                                            return lotto;
+                                                    
             else
                 if(lotto - 1 == serialNumber)
                     lotto -= 2;
                 else
                     lotto -= 1;
         }
-        
-        if(lotto == serialNumber)
-            if(rand.nextBoolean()){
-                return lotto;
-            }
-            else{
-                if(lotto + 1 != 10)
-                    lotto += 1;
-            }
                 
         return lotto;
     }
